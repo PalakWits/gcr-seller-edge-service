@@ -1,0 +1,53 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ONDC RET11 on_search (high-level validation)",
+  "type": "object",
+  "required": ["context", "message"],
+  "properties": {
+    "context": {
+      "type": "object",
+      "required": [
+        "domain",
+        "country",
+        "city",
+        "action",
+        "core_version",
+        "bap_id",
+        "bap_uri",
+        "bpp_id",
+        "bpp_uri",
+        "transaction_id",
+        "message_id",
+        "timestamp"
+      ],
+      "properties": {
+        "domain": { "type": "string", "const": "ONDC:RET11" },
+        "country": { "type": "string" },
+        "city": { "type": "string" },
+        "action": { "type": "string", "const": "on_search" },
+        "core_version": { "type": "string" },
+        "bap_id": { "type": "string" },
+        "bap_uri": { "type": "string", "format": "uri" },
+        "bpp_id": { "type": "string" },
+        "bpp_uri": { "type": "string", "format": "uri" },
+        "transaction_id": { "type": "string" },
+        "message_id": { "type": "string" },
+        "timestamp": { "type": "string" }
+      },
+      "additionalProperties": true
+    },
+    "message": {
+      "type": "object",
+      "required": ["catalog"],
+      "properties": {
+        "catalog": {
+          "type": "object"
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}
+
+

@@ -1,0 +1,67 @@
+{
+  "ret11_on_search": {
+    "context": {
+      "domain": "ONDC:RET11",
+      "country": "IND",
+      "city": "std:080",
+      "action": "on_search",
+      "core_version": "1.2.5",
+      "bap_id": "bnp.com",
+      "bap_uri": "https://bnp.com/ondc",
+      "bpp_id": "snp.com",
+      "bpp_uri": "https://snp.com/ondc",
+      "transaction_id": "T1",
+      "message_id": "M1",
+      "timestamp": "2025-01-08T08:00:30.000Z"
+    },
+    "message": {
+      "catalog": {
+        "bpp/fulfillments": [
+          {
+            "id": "1",
+            "type": "Delivery"
+          }
+        ],
+        "bpp/descriptor": {
+          "name": "Seller NP",
+          "symbol": "https://snp.com/images/np.png"
+        }
+      }
+    }
+  },
+  "ret18_search": {
+    "context": {
+      "action": "search",
+      "bap_id": "buyer-app-001",
+      "bap_uri": "https://workbench.ondc.tech/api-service/ONDC:RET10/1.2.5/buyer",
+      "domain": "ONDC:RET18",
+      "city": "std:080",
+      "country": "IND",
+      "message_id": "98c5d45a-79fa-4746-afcc-a6612c0285df",
+      "timestamp": "2025-12-09T08:00:35.979Z",
+      "transaction_id": "86837f1f-822e-4419-84ad-23bcede666ab",
+      "core_version": "1.2.5",
+      "ttl": "PT30S"
+    },
+    "message": {
+      "intent": {
+        "payment": {
+          "@ondc/org/buyer_app_finder_fee_type": "percent",
+          "@ondc/org/buyer_app_finder_fee_amount": "3"
+        },
+        "tags": [
+          {
+            "code": "bap_terms",
+            "list": [
+              {
+                "code": "static_terms",
+                "value": " https://github.com/ONDC-Official/NP-Static-Terms/buyerNP_BNP/0.9/tc.pdf"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
+

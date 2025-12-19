@@ -1,0 +1,13 @@
+CREATE TABLE IF NOT EXISTS users (
+    id VARCHAR(40) PRIMARY KEY,
+    name VARCHAR(255) NOT NULL UNIQUE,
+    url TEXT NOT NULL,
+    api_key VARCHAR(255) NOT NULL UNIQUE,
+    is_active BOOLEAN DEFAULT true,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE INDEX IF NOT EXISTS idx_users_name ON users(name);
+CREATE INDEX IF NOT EXISTS idx_users_api_key ON users(api_key);
+CREATE INDEX IF NOT EXISTS idx_users_is_active ON users(is_active);
